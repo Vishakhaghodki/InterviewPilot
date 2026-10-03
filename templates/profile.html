@@ -1,0 +1,13 @@
+{% extends "base.html" %}{% block title %}Profile &middot; InterviewPilot{% endblock %}
+{% block content %}
+<h1>Your profile</h1>
+<form id="profile-form" class="card form">
+  <label>Name<input name="name" value="{{ u.name }}" required minlength="2" maxlength="80"></label>
+  <label>Email<input value="{{ u.email }}" disabled></label>
+  <label>Skills (comma separated)<textarea name="skills" rows="2" maxlength="2000" placeholder="Python, Flask, SQL">{{ u.skills }}</textarea></label>
+  <label>Education<textarea name="education" rows="2" maxlength="2000" placeholder="B.Tech in Computer Science, 2025">{{ u.education }}</textarea></label>
+  <label>Experience<textarea name="experience" rows="3" maxlength="2000" placeholder="Intern at ... built ...">{{ u.experience }}</textarea></label>
+  <p class="muted">Resume: {{ u.resume_filename or 'not uploaded' }} &middot; <a href="{{ url_for('pages.resume') }}">Upload or replace</a></p>
+  <button class="btn">Save profile</button>
+</form>
+{% endblock %}

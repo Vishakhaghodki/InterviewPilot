@@ -1,0 +1,15 @@
+{% extends "base.html" %}{% block title %}New interview &middot; InterviewPilot{% endblock %}
+{% block content %}
+<h1>Set up your mock interview</h1>
+<form id="setup-form" class="card form">
+  <div class="choices">
+    <label class="choice"><input type="radio" name="type" value="technical" checked><b>Technical</b><span>Coding concepts based on your skills</span></label>
+    <label class="choice"><input type="radio" name="type" value="hr"><b>HR</b><span>Behavioural and motivation questions</span></label>
+    <label class="choice"><input type="radio" name="type" value="mixed"><b>Mixed</b><span>Half technical, half HR</span></label>
+  </div>
+  <label>Number of questions
+    <select name="num_questions"><option>3</option><option selected>5</option><option>7</option><option>10</option></select>
+  </label>
+  <button class="btn">Generate questions and begin</button>
+</form>
+{% endblock %}

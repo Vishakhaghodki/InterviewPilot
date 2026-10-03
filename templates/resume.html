@@ -1,0 +1,10 @@
+{% extends "base.html" %}{% block title %}Resume &middot; InterviewPilot{% endblock %}
+{% block content %}
+<h1>Resume upload</h1>
+<form id="resume-form" class="card form">
+  <label>Choose a PDF, DOCX or TXT file (max 5 MB)<input type="file" name="resume" accept=".pdf,.docx,.txt"></label>
+  <button class="btn">Upload and analyse</button>
+  <p class="muted">Current resume: {{ p.resume_filename or 'none' }}{% if p.resume_skills %} &middot; detected skills: {{ p.resume_skills }}{% endif %}</p>
+</form>
+<div id="resume-result"></div>
+{% endblock %}

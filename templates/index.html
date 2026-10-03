@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <h1>Practise the interview before it counts.</h1>
+  <p>Answer technical and HR questions built from your own resume, get a score and specific feedback on every answer, and watch your weak spots shrink.</p>
+  <div class="row">
+    {% if session.user_id %}<a class="btn" href="{{ url_for('pages.setup') }}">Start a mock interview</a>
+    {% else %}<a class="btn" href="{{ url_for('auth.register') }}">Create free account</a>
+    <a class="btn ghost" href="{{ url_for('auth.login') }}">Log in</a>{% endif %}
+  </div>
+  <p class="muted">Try the demo account: <code>demo@interviewpilot.com</code> / <code>demo1234</code> (run <code>flask --app app seed-demo</code> first).</p>
+</section>
+<section class="grid3">
+  <div class="card"><h3>Questions from your resume</h3><p>Upload a PDF, DOCX or TXT resume. Your skills shape which questions you get.</p></div>
+  <div class="card"><h3>Feedback on every answer</h3><p>Score out of 10, strengths, weaknesses and concrete suggestions right after you answer.</p></div>
+  <div class="card"><h3>Progress you can see</h3><p>Charts for average score, technical vs HR, trend over time and your weakest topics.</p></div>
+</section>
+{% endblock %}

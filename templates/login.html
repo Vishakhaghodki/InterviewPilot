@@ -1,0 +1,10 @@
+{% extends "base.html" %}{% block title %}Log in &middot; InterviewPilot{% endblock %}
+{% block content %}
+<form method="post" class="card form narrow">
+  <h1>Log in</h1>
+  <label>Email<input type="email" name="email" value="{{ email or '' }}" required autocomplete="email"></label>
+  <label>Password<input type="password" name="password" required autocomplete="current-password"></label>
+  <button class="btn">Log in</button>
+  <p class="muted">New here? <a href="{{ url_for('auth.register') }}">Create an account</a></p>
+</form>
+{% endblock %}

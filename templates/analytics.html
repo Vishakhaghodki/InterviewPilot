@@ -1,0 +1,20 @@
+{% extends "base.html" %}{% block title %}Analytics &middot; InterviewPilot{% endblock %}
+{% block content %}
+<h1>Performance analytics</h1>
+<div class="stats">
+  <div class="stat"><b id="stat-avg">-</b><span>Average score</span></div>
+  <div class="stat"><b id="stat-count">-</b><span>Interviews done</span></div>
+  <div class="stat"><b id="stat-answers">-</b><span>Answers evaluated</span></div>
+  <div class="stat"><b id="stat-tech">-</b><span>Technical avg</span></div>
+  <div class="stat"><b id="stat-hr">-</b><span>HR avg</span></div>
+</div>
+{% include "_charts.html" %}
+<h2>All topics</h2>
+<div class="card scroll"><table><thead><tr><th>Topic</th><th>Average</th><th>Answers</th></tr></thead><tbody id="topic-body"></tbody></table></div>
+<h2>Recommended focus</h2>
+<div id="recs" class="recs"><p class="muted">Loading...</p></div>
+{% endblock %}
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block title %}Results &middot; InterviewPilot{% endblock %}
+{% block content %}
+<div id="result" data-id="{{ iid }}"><p class="muted">Loading results...</p></div>
+<div class="row"><a class="btn" href="{{ url_for('pages.setup') }}">Practise again</a>
+<a class="btn ghost" href="{{ url_for('pages.history') }}">View history</a></div>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/session.js') }}"></script>{% endblock %}

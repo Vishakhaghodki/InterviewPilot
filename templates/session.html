@@ -1,0 +1,18 @@
+{% extends "base.html" %}{% block title %}Interview &middot; InterviewPilot{% endblock %}
+{% block content %}
+<div id="session" data-id="{{ iid }}">
+  <div class="progress"><div id="progress-bar"></div></div>
+  <div class="card">
+    <p class="muted"><span id="q-count"></span> &middot; <span id="q-cat" class="tag"></span> <span id="q-topic" class="tag alt"></span></p>
+    <h2 id="q-text">Loading question...</h2>
+    <textarea id="answer" rows="7" maxlength="5000" placeholder="Type your answer as you would say it in the interview..."></textarea>
+    <div class="row">
+      <button id="submit-btn" class="btn">Submit answer</button>
+      <button id="next-btn" class="btn" hidden>Next question</button>
+      <button id="finish-early" class="btn ghost" hidden>Finish now</button>
+    </div>
+  </div>
+  <div id="eval-box" class="card eval" hidden></div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/session.js') }}"></script>{% endblock %}
